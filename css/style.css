@@ -101,6 +101,7 @@ form {
 
 .input-form{
   min-width: 300px;
+  align-self: center;
 }
 
 .locs-table {
