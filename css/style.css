@@ -1,13 +1,22 @@
 :root {
   /* pallete */
   /* color 1 */
-  --clr1: #ffea00;
+  /* --clr1: #ffea00; */
+  --clr1: #333;
   /* color 2 */
-  --clr2: #e486e4;
+  /* --clr2: #e486e4; */
+  --clr2: #fff;
   /* color 3 */
   --clr3: #90e8f8;
+  /* color 4 */
+  --clr4: #acd4db;
+  
 
 
+}
+
+body {
+  background-color: aliceblue;
 }
 
 button {
@@ -26,8 +35,14 @@ button {
     "Locations-Table map";
 }
 
+
+
 .map {
   grid-area: map;
+  display: flex;
+  align-self: center;
+  margin: 5px;
+  max-width: 700px;
 }
 
 .weather {
@@ -38,10 +53,17 @@ button {
   grid-area: Locations-Table;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-left: 200px;
+  margin-right: 200px;
 
 }
 
@@ -55,6 +77,8 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin: 2px;
+  min-width: 123px;
 }
 
 
@@ -67,10 +91,17 @@ button {
   padding: 0 10px;
 }
 
+
+
+
 form {
   display: flex;
 }
 
+
+.input-form{
+  min-width: 300px;
+}
 
 .locs-table {
 
@@ -82,13 +113,18 @@ form {
   overflow-x: hidden;
 }
 
+.loc-name{
+  font-weight: 700;
+text-decoration: underline;
+}
+
 .locs-table::-webkit-scrollbar {
   border-radius: 10px;
   width: 16px;
 }
 
 .locs-table::-webkit-scrollbar-track {
-  background-color: var(--clr3);
+  background-color: var(--clr4);
   margin-top: 5px;
   margin-bottom: 10px;
   border-radius: 10px;
@@ -109,24 +145,16 @@ form {
 .locs-table button {
   border: none;
   outline: none;
-  background-color: #ffea00;
+  background-color: var(--clr3);
   width: 45%;
   max-width: 120px;
   text-align: center;
   font-weight: bold;
-  padding: 5px ;
+  padding: 5px;
   border-radius: 1.2rem;
 }
 
 .locs-table button:hover {
-  background-color: var(--clr3);
-  /* color: var(--clr2); */
-}
-
-
-.map {
-  display: flex;
-  align-self: center;
-  margin: 5px;
-  max-width: 700px;
+  background-color: var(--clr1);
+  color: var(--clr2);
 }
