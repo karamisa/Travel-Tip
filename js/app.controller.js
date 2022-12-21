@@ -6,9 +6,9 @@ window.onAddMarker = onAddMarker
 window.onPanTo = onPanTo
 window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
-window.onRemoveLoc=onRemoveLoc
-window.onGetSearch=onGetSearch
-window.onGetLocUrl=onGetLocUrl
+window.onRemoveLoc = onRemoveLoc
+window.onGetSearch = onGetSearch
+window.onGetLocUrl = onGetLocUrl
 
 
 function onInit() {
