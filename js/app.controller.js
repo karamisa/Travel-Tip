@@ -12,8 +12,10 @@ window.onGetLocUrl=onGetLocUrl
 
 
 function onInit() {
-    mapService.initMap()
+    const loc = checkForLocParam() || {lat: 32.0749831, lng: 34.9120554}
+    mapService.initMap(loc.lat,loc.lng)
         .then(() => {
+            
             console.log('Map is ready')
         })
         .catch(() => console.log('Error: cannot init map'))
@@ -37,6 +39,7 @@ function onAddMarker() {
     newLoc.lng= markerLoc.lng
     onAddLoc(newLoc)
 }
+
 
 function onGetLocs() {
     locService.getLocs()
@@ -94,16 +97,6 @@ function onGetSearch(e){
     e.preventDefault()
     const searchStr = document.querySelector('form input').value
     mapService.getSearchLoc(searchStr).then(onAddLoc)
-
-    
-}
-
-function onSetFilterBy(filterBy) {
-    filterBy = setBookFilter(filterBy)
-    renderBooks()
-    const queryStringParams = `?maxPrice=${filterBy.maxPrice}&minRate=${filterBy.minRate}&search=${filterBy.search}&lang=${filterBy.lang}`
-    const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
-    window.history.pushState({ path: newUrl }, '', newUrl)
 }
 
 
@@ -111,13 +104,16 @@ function checkForLocParam(){
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('lat') && urlParams.has('lng')) {
         const loc={}
-        loc.lat = urlParams.get('lat');
-        loc.lng = urlParams.get('lng');
-      onSetLoc(lang);
+        loc.lat = +urlParams.get('lat');
+        loc.lng = +urlParams.get('lng');
+        return loc
     }
+  
 }
 
 function onGetLocUrl(){
-    const markerLoc= mapService.getCurrLoc()
-    console.log(markerLoc)
+    const loc= mapService.getCurrLoc()
+    console.log(loc)
+    const url = `https://karamisa.github.io/Travel-Tip/index.html?lat=${loc.lat}&lng=${loc.lng}`
+    navigator.clipboard.writeText(url)
 }
