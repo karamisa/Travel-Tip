@@ -19,7 +19,7 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
             gMap = new google.maps.Map(
                 document.querySelector('#map'), {
                 center: { lat, lng },
-                zoom: 15
+                zoom: 10
             });
             console.log(gMap)
             let infoWindow = new google.maps.InfoWindow({
@@ -56,6 +56,7 @@ function addMarker(loc) {
 }
 
 function panTo(lat, lng) {
+    console.log(lat,lng)
     var laLatLng = new google.maps.LatLng(lat, lng)
     gMap.panTo(laLatLng)
 }
