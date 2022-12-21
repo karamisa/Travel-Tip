@@ -2,10 +2,10 @@
 
 .content-container {
     display: grid; 
-    grid-auto-columns: 1fr; 
-    grid-auto-rows: 1fr; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
+    /* grid-auto-columns: 1fr;  */
+    /* grid-auto-rows: 1fr;  */
+    grid-template-columns: 1fr 2fr; 
+    /* grid-template-rows: 1fr 1fr;  */
     gap: 0px 0px; 
     grid-template-areas: 
       "Weather map"
@@ -47,3 +47,14 @@
   form {
     display: flex;
   }
+
+
+.locs-table-container{
+
+  border: 5px solid var(--clr6);
+  /* border-radius: 10px; */
+
+  height: 40vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

@@ -25,14 +25,14 @@
             <h2>Locations Tables</h2>
             <div class="locs-table"></div>
         </section>
+        <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
+        <button onclick="onAddMarker()" class="btn-save">Save Location</button>
+        
+        <p>You are at: <span class="user-pos"></span></p>
+        <p>Locations:
+            <pre class="locs"></pre>
+        </p>
     </div>
-    <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
-    <button onclick="onAddMarker()" class="btn-save">Save Location</button>
-
-    <p>You are at: <span class="user-pos"></span></p>
-    <p>Locations:
-    <pre class="locs"></pre>
-    </p>
 
 
     <script src="/lib/axios.js"></script>
